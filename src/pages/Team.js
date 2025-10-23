@@ -303,7 +303,6 @@ const Team = () => {
   return (
     <div className="team">
       <h1 className="team__header">Meet Our Team</h1>
-      <img src={board} alt="Board Group" className="team__boardImg" />
 
       <div className="team__members">
         {boardMembers.map((member, index) => (

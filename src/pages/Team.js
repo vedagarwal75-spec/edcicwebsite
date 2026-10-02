@@ -3,9 +3,19 @@ import "../styles/team.css";
 import { Phone, Linkedin, Mail } from "lucide-react";
 import { teamMembers } from "../team/members";
 
-// Resolves the `image` file name in team/members.js to the bundled asset.
-const teamImages = require.context("../team", false, /\.(png|jpe?g|webp|svg)$/);
-const getImage = (file) => teamImages(`./${file}`);
+// Photos are matched to members by name: "Ribhav Parasramka" -> photos/ribhav-parasramka.(png|jpg|jpeg|webp)
+const photoContext = require.context("../team/photos", false, /\.(png|jpe?g|webp)$/i);
+const photos = {};
+photoContext.keys().forEach((key) => {
+  const slug = key.replace(/^\.\//, "").replace(/\.[^.]+$/, "").toLowerCase();
+  photos[slug] = photoContext(key);
+});
+const placeholderModule = require("../team/photos/placeholder.svg");
+const placeholder = placeholderModule.default || placeholderModule;
+
+const slugify = (name) =>
+  name.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const getImage = (member) => photos[slugify(member.name)] || placeholder;
 
 const Team = () => {
   return (
@@ -16,7 +26,7 @@ const Team = () => {
         {teamMembers.map((member) => (
               <div key={member.email} className="team__card">
                 <img
-                  src={getImage(member.image)}
+                  src={getImage(member)}
                   alt={member.name}
                   className="team__memberImg"
                 />

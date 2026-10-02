@@ -1,12 +1,11 @@
-// Single source of truth for the Team page. Edit ONLY this file to change it.
+// Single source of truth for the Team page. Edit ONLY this file (and the photos folder).
 //
 //  - Members show in the order listed here, 4 per row (a short last row is centred).
 //  - To reorder: cut a member block and paste it elsewhere.
-//  - To change a photo: put the PNG in src/team/ and set `image` to its file name.
-//  - No photo yet? Use PLACEHOLDER_IMAGE. Empty `linkedin` hides the LinkedIn link.
-//  - Photos: run  scripts/cutout.swift  to remove the background + crop to chest level.
-
-export const PLACEHOLDER_IMAGE = "placeholder.svg";
+//  - PHOTOS: put the photo in  src/team/photos/  named after the member: firstname-lastname.png
+//    (.jpg / .jpeg / .webp also work, any capitals are fine), e.g. "Ribhav Parasramka" -> ribhav-parasramka.png
+//    It appears automatically. No photo found = a grey placeholder is shown.
+//  - Empty `linkedin` hides the LinkedIn link.
 
 export const teamMembers = [
   {
@@ -15,7 +14,6 @@ export const teamMembers = [
     phone: "7596066726",
     email: "ribhavparasramka.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/ribhavparasramka",
-    image: "ribhav-parasramka.png",
   },
   {
     name: "Anirudh Shaw",
@@ -23,7 +21,6 @@ export const teamMembers = [
     phone: "9836142662",
     email: "anirudhshaw.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/anirudh-shaw",
-    image: "anirudh-shaw.png",
   },
   {
     name: "Diya Narwani",
@@ -31,7 +28,6 @@ export const teamMembers = [
     phone: "6290524234",
     email: "diyanarwani.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/diyanarwani",
-    image: "diya-narwani.png",
   },
   {
     name: "Preyashi Agarwal",
@@ -39,7 +35,6 @@ export const teamMembers = [
     phone: "9674545410",
     email: "preyashiagarwal.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/preyashi-agarwal-40887b310",
-    image: "preyashi-agarwal.png",
   },
   {
     name: "Neha Mundhra",
@@ -47,7 +42,6 @@ export const teamMembers = [
     phone: "6291630093",
     email: "nehamundhra.edcic.sxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/neha-mundhra-62348b2b7",
-    image: "neha-mundhra.png",
   },
   {
     name: "Riya Samdhani",
@@ -55,7 +49,6 @@ export const teamMembers = [
     phone: "7042855440",
     email: "riyasamdhani.edcicsxc@gmail.com",
     linkedin: "", // not provided yet; the LinkedIn link is hidden when empty
-    image: "riya-samdhani.png",
   },
   {
     name: "Mayank Mundhra",
@@ -63,7 +56,6 @@ export const teamMembers = [
     phone: "7044758567",
     email: "mayankmundhra.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/mayank-mundhra",
-    image: "mayank-mundhra.png",
   },
   {
     name: "Mihika Bajoria",
@@ -71,7 +63,6 @@ export const teamMembers = [
     phone: "8016407633",
     email: "mihikabajoria.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/mihika-bajoria",
-    image: "mihika-bajoria.png",
   },
   {
     name: "Kirish Agarwal",
@@ -79,7 +70,6 @@ export const teamMembers = [
     phone: "9883243237",
     email: "kirishagarwal.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/kirish-agarwal-4ab070319",
-    image: "kirish-agarwal.png",
   },
   {
     name: "Saisha Kapur",
@@ -87,7 +77,6 @@ export const teamMembers = [
     phone: "7044633962",
     email: "saishakapur.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/saisha-kapur-380587279",
-    image: "saisha-kapur.png",
   },
   {
     name: "Dighvij Chirimar",
@@ -95,7 +84,6 @@ export const teamMembers = [
     phone: "9903991918",
     email: "dighvijchirimar.edcicsxc@gmail.com",
     linkedin: "https://in.linkedin.com/in/dighvijchirimar",
-    image: "dighvij-chirimar.png",
   },
   {
     name: "Soumya Singh",
@@ -103,7 +91,6 @@ export const teamMembers = [
     phone: "9007026273",
     email: "soumyasingh.edcsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/soumya-singh-67515a325",
-    image: "soumya-singh.png",
   },
   {
     name: "Pragati Pagaria",
@@ -111,7 +98,6 @@ export const teamMembers = [
     phone: "8017806285",
     email: "pragatipagaria.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/pragati-pagaria",
-    image: PLACEHOLDER_IMAGE, // photo not received yet
   },
   {
     name: "Aashika Kaushik",
@@ -119,7 +105,6 @@ export const teamMembers = [
     phone: "8100360466",
     email: "aashikakaushik.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/aashika-kaushik-349146261",
-    image: "aashika-kaushik.png",
   },
   {
     name: "Adya Goyal",
@@ -127,7 +112,6 @@ export const teamMembers = [
     phone: "8961069270",
     email: "adyagoyal.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/adyagoyal",
-    image: "adya-goyal.png",
   },
   {
     name: "Alesandra Anthony",
@@ -135,7 +119,6 @@ export const teamMembers = [
     phone: "9831736839",
     email: "alesandraanthony.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/alesandra-anthony/",
-    image: "alesandra-anthony.png",
   },
   {
     name: "Harshita Agarwal",
@@ -143,7 +126,6 @@ export const teamMembers = [
     phone: "9832950011",
     email: "harshitaagarwal.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/harshita-agarwal-02a0aa31a",
-    image: PLACEHOLDER_IMAGE, // photo not received yet
   },
   {
     name: "Mayank Saraf",
@@ -151,7 +133,6 @@ export const teamMembers = [
     phone: "8777076217",
     email: "mayanksaraf.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/mayank-saraf-369607243/",
-    image: "mayank-saraf.png",
   },
   {
     name: "Vidisha Jagnani",
@@ -159,6 +140,5 @@ export const teamMembers = [
     phone: "9830230393",
     email: "vidishajagnani.edcicsxc@gmail.com",
     linkedin: "https://www.linkedin.com/in/vidishajagnani",
-    image: "vidisha-jagnani.png",
   },
 ];

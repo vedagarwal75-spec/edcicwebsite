@@ -1,14 +1,11 @@
 import React from "react";
 import "../styles/Envisage.css";
 import { Download } from "@mui/icons-material";
-import envisagePDF from "../assets/envisage.pdf";
-import pdfPreview from "../assets/envisage_preview.png";
+import { ENVISAGE } from "../config/documents";
 import team1 from "../assets/boardImages/img2.png";
 import team2 from "../assets/boardImages/img3.png";
 import team3 from "../assets/boardImages/img4.png";
 import team5 from "../assets/boardImages/img1.png";
-import team6 from "../assets/boardImages/img9.png";
-import team7 from "../assets/boardImages/img7.png";
 import img13 from "../assets/boardImages/img13.png";
 import img14 from "../assets/boardImages/img14.png";
 import akm from "../assets/boardImages/akm.png";
@@ -39,13 +36,13 @@ const Envisage = () => {
       {/* PDF Preview & Download Section */}
       <div className="envisage__download-section">
         <img
-          src={pdfPreview}
+          src={ENVISAGE.preview}
           alt="Envisage Newsletter Preview"
           className="envisage__pdf-preview"
         />
         <a
-          href={envisagePDF}
-          download="Envisage_Newsletter.pdf"
+          href={ENVISAGE.pdf}
+          download={ENVISAGE.downloadName}
           className="envisage__download-btn"
         >
           <Download className="envisage__download-icon" />

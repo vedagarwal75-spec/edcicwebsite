@@ -15,7 +15,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import logo from "../assets/logo.jpeg";
-import { NAVBAR_LINKS } from "../constants/navigationLinks";
+import { NAVBAR_LINKS } from "../config/navigation";
 import "../styles/navbar.css";
 
 const Navbar = () => {

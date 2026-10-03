@@ -7,6 +7,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import "../styles/contact.css";
+import { EMAILS, SOCIAL_LINKS } from "../config/site";
 import ContactBg from "../assets/contact_background.jpeg"; // Import background image
 
 const Contact = () => {
@@ -18,28 +19,28 @@ const Contact = () => {
       <h2 className="contact__heading">Contact Us Now!</h2>
       <div className="contact__icons">
         <a
-          href="https://instagram.com/edcicsxc"
+          href={SOCIAL_LINKS.instagram}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faInstagram} className="contact__icon" />
         </a>
         <a
-          href="https://www.linkedin.com/company/entrepreneurship-development-cell-st.-xavier's-college-autonomous-kolkata/posts/?feedView=all"
+          href={SOCIAL_LINKS.linkedinPosts}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faLinkedin} className="contact__icon" />
         </a>
         <a
-          href="https://www.facebook.com/edcsxc"
+          href={SOCIAL_LINKS.facebook}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faFacebook} className="contact__icon" />
         </a>
         <a
-          href="https://www.youtube.com/@EDCICSXC"
+          href={SOCIAL_LINKS.youtube}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -47,8 +48,8 @@ const Contact = () => {
         </a>
       </div>
       <p className="contact__email">
-        <a href="mailto:pr@edcicsxc.com">pr@edcicsxc.com</a><br/>
-        <a href="mailto:core@edcicsxc.com">core@edcicsxc.com</a>
+        <a href={`mailto:${EMAILS.pr}`}>{EMAILS.pr}</a><br/>
+        <a href={`mailto:${EMAILS.core}`}>{EMAILS.core}</a>
       </p>
     </div>
   );

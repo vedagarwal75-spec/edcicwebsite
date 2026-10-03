@@ -28,7 +28,7 @@ const Team = () => {
                 <img
                   src={getImage(member)}
                   alt={member.name}
-                  className="team__memberImg"
+            className="team__memberImg"
                 />
                 <h2 className="team__memberName">{member.name}</h2>
                 <p className="team__memberPosition">{member.position}</p>

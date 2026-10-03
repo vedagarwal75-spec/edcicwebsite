@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/360.css";
 import workshopLogo from "../assets/360logo2.png"; // Ensure this image exists
-import personalFinanceImg from "../assets/edf.jpeg"; // Replace with actual image
 import dhairya from "../assets/360/pageDhairyaGangwani_5.png";
 import pawan from "../assets/360/pagePawanLalwani_2.png";
 import shubhang from "../assets/360/pageShubhangiMadan_3.png";

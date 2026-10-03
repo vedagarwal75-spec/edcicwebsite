@@ -1,11 +1,7 @@
 {
   "version": "0.0.1",
   "configurations": [
-    {
-      "name": "edcic-dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["start"],
-      "port": 3000
-    }
+    { "name": "edcic-dev", "runtimeExecutable": "npm", "runtimeArgs": ["start"], "port": 3000 },
+    { "name": "edcic-prod", "runtimeExecutable": "npx", "runtimeArgs": ["--yes", "serve", "-s", "build", "-l", "5000"], "port": 5000 }
   ]
 }

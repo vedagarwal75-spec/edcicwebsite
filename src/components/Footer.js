@@ -6,17 +6,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import edciclogo from "../assets/edcic.png";
+import { FOOTER_LINKS } from "../config/navigation";
+import { EMAILS, SITE, SOCIAL_LINKS } from "../config/site";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 function Footer() {
-  const footerLinks = [
-    { text: "Home", url: "/" },
-    { text: "About Us", url: "/about" },
-    { text: "Initiatives", url: "/initiatives" },
-    { text: "Our Associations", url: "/associations" },
-    { text: "Envisage", url: "/envisage" },
-    { text: "Incubation Centre", url: "/incubation-centre" },
-    { text: "Contact", url: "/contact" },
-  ];
   const returnToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -29,8 +22,8 @@ function Footer() {
         <div className="footerLinks">
           <div className="footerLinksText">Site Map</div>
           <div className="footerLinks_link">
-            <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-              {footerLinks.map((link, index) => (
+            <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+              {FOOTER_LINKS.map((link, index) => (
                 <Button
                   key={index}
                   color="inherit"
@@ -54,7 +47,7 @@ function Footer() {
             <Button
               sx={{ color: "black" }}
               component="a"
-              href="https://www.instagram.com/edcicsxc"
+              href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -63,7 +56,7 @@ function Footer() {
             <Button
               sx={{ color: "black" }}
               component="a"
-              href="https://www.linkedin.com/company/entrepreneurship-development-cell-st.-xavier's-college-autonomous-kolkata/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=in"
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,7 +65,7 @@ function Footer() {
             <Button
               sx={{ color: "black" }}
               component="a"
-              href="https://www.facebook.com/edcsxc"
+              href={SOCIAL_LINKS.facebook}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -81,18 +74,18 @@ function Footer() {
             <Button
               sx={{ color: "black" }}
               component="a"
-              href="https://www.youtube.com/@EDCICSXC"
+              href={SOCIAL_LINKS.youtube}
               target="_blank"
               rel="noopener noreferrer"
             >
               <YouTubeIcon />
             </Button>
           </div>
-          <p className="footerSocialsText">pr@edcicsxc.com</p>
+          <p className="footerSocialsText">{EMAILS.pr}</p>
         </div>
       </div>
       <div className="footerDown">
-        <p className="edcCopyright">© 2025 edcicsxc. All Rights Reserved. </p>
+        <p className="edcCopyright">{SITE.copyright} </p>
       </div>
     </div>
   );

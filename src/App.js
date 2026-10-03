@@ -1,48 +1,44 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
-// Layout Components
+// Layout
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
-// Page Components
+// Pages
 import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Archives from "./pages/Archives";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
-
-// Event Pages
-import Prism from "./pages/Prism";
 import Initium from "./pages/Initium";
-import Elevator from "./pages/Elevator";
 import Entreprise from "./pages/Entreprise";
-import EacPage from "./pages/Eac.js";
 import Workshop360 from "./pages/_360";
 import Envisage from "./pages/Envisage";
-
-// Initiative Pages
 import Initiatives from "./components/Initiatives";
 import SeedStories from "./pages/SeedStories";
-import IncubationCentre from "./pages/IncubationCentre.js";
-import Edf from "./pages/Edf.js";
-import LiveProjects from "./pages/LiveProjects.js";
-import Bizwalk from "./pages/Bizwalk.js";
-
-// Network & Association Pages
+import IncubationCentre from "./pages/IncubationCentre";
+import Edf from "./pages/Edf";
+import LiveProjects from "./pages/LiveProjects";
+import Bizwalk from "./pages/Bizwalk";
 import OurNetwork from "./pages/OurNetwork";
 import OurAssociations from "./pages/OurAssociations";
-import Recruited from "./pages/Recruited";
-
-// Special Components
 import EacBanner from "./components/EacBanner";
+
+// Heavy pages (3D / WebGL / timeline libraries) load only when visited,
+// which keeps the first load light on phones.
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Prism = lazy(() => import("./pages/Prism"));
+const Elevator = lazy(() => import("./pages/Elevator"));
+const EacPage = lazy(() => import("./pages/Eac"));
+const Recruited = lazy(() => import("./pages/Recruited"));
 
 function App() {
   return (
     <div className="app">
       <Navbar />
+      <Suspense fallback={null}>
       <Routes>
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
@@ -94,6 +90,7 @@ function App() {
         {/* 404 Route */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </Suspense>
       <Footer />
     </div>
   );

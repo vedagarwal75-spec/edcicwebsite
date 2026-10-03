@@ -1,13 +1,6 @@
 import React from "react";
 import prismLogo from "../assets/prismwhite.jpg"; // Update with actual image path
 import prismLogo2 from "../assets/prismpurple.jpg"; // Update with actual image path
-import faceLogo from "../assets/face_logo.png"; // Replace with actual paths
-import caMonkLogo from "../assets/ca_monk.jpeg";
-import edugraphLogo from "../assets/edugraph.jpeg";
-import friendsFmLogo from "../assets/friends_fm_logo.webp";
-import juiceologyLogo from "../assets/juiceology.png";
-import balajiLogo from "../assets/balaji.png";
-import aipLogo from "../assets/aip.jpg";
 import PrismComponent from "../components/Prism";
 import "../styles/Prism.css";
 

@@ -1,5 +1,5 @@
 .aboutUsLanding {
-  width: 100vw;
+  width: 100%;
   margin: 0;
   height: 60vh;
   display: flex;
@@ -28,14 +28,14 @@
 
 /* Ensure full-width for main containers */
 .aboutUsTimeline {
-  width: 100vw !important;
+  width: 100% !important;
   margin: 0 !important;
   padding: 20px;
 }
 
 /* Fix padding/margin issues in the main container */
 .aboutUsContainer {
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   margin: 0;
   padding: 0;

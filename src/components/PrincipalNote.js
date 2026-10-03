@@ -70,7 +70,11 @@ const NoteContainer = styled.div`
       p {
         font-size: 1.1rem;
         line-height: 1.8;
-        text-align: justify;
+        text-align: left;
+
+        @media (min-width: 768px) {
+          text-align: justify;
+        }
       }
 
       .quote-marks {

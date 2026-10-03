@@ -6,7 +6,6 @@ import prizesIcon from "../assets/prizes.png";
 import mentoringIcon from "../assets/mentoring.jpeg";
 import workshopsIcon from "../assets/workshops.jpg";
 import fundraisingIcon from "../assets/fundraising.webp";
-import benefitsIcon from "../assets/benefits.png";
 import elevatorLogo from "../assets/elevatorLogo.png"; // Update with the correct path if needed
 
 const ElevatorInfo = () => {

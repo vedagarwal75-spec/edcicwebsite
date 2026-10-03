@@ -70,6 +70,10 @@
 }
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
+  .eacDetails__title_2 {
+    font-size: 3rem;
+  }
+
   .eacDetails__title {
     font-size: 3rem;
   }
@@ -91,6 +95,10 @@
 }
 
 @media (max-width: 768px) {
+  .eacDetails__title_2 {
+    font-size: 2.5rem;
+  }
+
   .eacDetails__title {
     font-size: 2.5rem;
   }
@@ -112,6 +120,10 @@
 }
 
 @media (max-width: 480px) {
+  .eacDetails__title_2 {
+    font-size: 2rem;
+  }
+
   .eacDetails__title {
     font-size: 2rem;
   }

@@ -151,3 +151,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .seedStories__parallax {
+    background-attachment: scroll; /* fixed backgrounds are broken/janky on phones */
+  }
+}

@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# EDCIC Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Official website of the Entrepreneurship Development Cell & Incubation Centre, St. Xavier's College (Autonomous), Kolkata.
+Built with React (Create React App). Deployed on Vercel from the `main` branch.
 
-## Available Scripts
+## Run locally
 
-In the project directory, you can run:
+```bash
+npm install
+npm start          # http://localhost:3000
+npm run build      # production build (same check Vercel runs; lint warnings fail it)
+```
 
-### `npm start`
+## Where to change things
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| I want to change... | Edit |
+|---|---|
+| Team members (name, position, phone, email, LinkedIn, order) | `src/team/members.js` |
+| A team photo | save it as `src/team/photos/firstname-lastname.png` (auto-matched by name) |
+| Gallery photos | add / remove / rename files in `src/assets/gallery/` (shown in file-name order) |
+| Our Associations logos | `src/content/associations.js` (+ the logo file in `src/assets/ourAssociations/`) |
+| Our Network people | `src/content/network.js` (+ the photo in `src/assets/network/`) |
+| Emails, social links, copyright, registration / YouTube links | `src/config/site.js` |
+| Downloadable PDFs (Envisage) | `src/config/documents.js` (replace the file in `src/assets/`) |
+| Navbar / footer links | `src/config/navigation.js` |
+| Page routes | `src/App.js` |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project layout
 
-### `npm test`
+```
+src/
+  config/       site-wide links, emails, PDFs, navigation (edit these for "fixed" text/links)
+  content/      list-style page data (gallery, associations, network)
+  team/         team members file + their photos
+  pages/        one file per page
+  components/   reusable sections
+  styles/       CSS per page / component
+  assets/       images and documents
+public/         index.html, favicon, manifest
+vercel.json     makes direct links like /team work on Vercel
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Deploying (Vercel)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Build command `npm run build`, output directory `build` (defaults).
+- `vercel.json` rewrites every route to `index.html` so refreshing or opening `/team` directly works.
+- Vercel builds with `CI=true`, so any ESLint warning (e.g. an unused import) fails the build. Run `npm run build` locally before pushing.
+- File names are case-sensitive on Vercel (Linux) but not on Mac/Windows: `image.JPG` and `image.jpg` are different there. Import paths must match the real file name exactly.
+- Keep images small (under ~500 KB, max ~2000px wide); large photos make the site slow on phones.

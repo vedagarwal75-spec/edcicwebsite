@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import heroImage from "../assets/edcic_team.jpeg";
-import cloudImage from "../assets/cloud.png";
 
 const HeroSection = styled.section`
   display: flex;
@@ -10,6 +9,7 @@ const HeroSection = styled.section`
   justify-content: center;
   text-align: center;
   height: 100vh;
+  height: 100dvh;
   color: #fff;
   position: relative;
   overflow: hidden;

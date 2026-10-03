@@ -1,7 +1,5 @@
 import React from "react";
 import "../styles/aboutUs.css";
-import OurReach from "../components/OurReach.js";
-import OurVision from "../components/OurVision.js";
 import { Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import {

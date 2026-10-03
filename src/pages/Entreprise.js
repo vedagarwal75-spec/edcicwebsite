@@ -1,16 +1,11 @@
 import React from "react";
 import "../styles/Entreprise.css";
-import edugraphLogo from "../assets/edugraph.jpeg"; // Replace with actual paths
-import friendsFmLogo from "../assets/friends_fm_logo.webp";
-import faceLogo from "../assets/face_logo.png";
-import educationTreeLogo from "../assets/education_tree.avif";
-import teachnookLogo from "../assets/teachnook.png";
+import { REGISTRATION_LINKS } from "../config/site";
 import entreprise_logo from "../assets/entreprise_logo.png";
 
 const Entreprise = () => {
   const redirect_to_form = () => {
-    window.open("https://www.github.com", "_blank");
-    // Redirects to the form page
+    window.open(REGISTRATION_LINKS.entreprise, "_blank", "noopener,noreferrer");
   };
   return (
     <div className="entreprise__container">

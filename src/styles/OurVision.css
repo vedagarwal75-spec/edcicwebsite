@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,5 +47,11 @@
 
   .ourVision__body {
     font-size: 1rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .ourVision__container {
+    background-attachment: scroll; /* fixed backgrounds are broken/janky on phones */
   }
 }

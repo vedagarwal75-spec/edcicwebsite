@@ -25,3 +25,13 @@ export const EVENT_LINKS = [
   { text: "EAC", url: "/events/eac" },
   { text: "Workshop 360", url: "/events/workshop" },
 ]; 
+
+export const FOOTER_LINKS = [
+  { text: "Home", url: "/" },
+  { text: "About Us", url: "/about" },
+  { text: "Initiatives", url: "/initiatives" },
+  { text: "Our Associations", url: "/associations" },
+  { text: "Envisage", url: "/envisage" },
+  { text: "Incubation Centre", url: "/incubation-centre" },
+  { text: "Contact", url: "/contact" },
+];

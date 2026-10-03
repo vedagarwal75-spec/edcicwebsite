@@ -1,14 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import SplashCursor from '../components/SplashCursor';
 import '../styles/recruited.css';
 
+const loadingTexts = [
+  "Running Verifications...",
+  'Evaluating Skills...',
+  'Assessing Potential...',
+  'Measuring Vibes...',
+  "Finalizing Decision...",
+  "Let's see if you made it."
+];
+
+const interactiveMessages = [
+  "We've seen your potential",
+  "It's time to prove it.",
+  "We call ourselves a family",
+  "And now...",
+  "You're a part of it.",
+  "It's time to see yourself in an EDCIC T-shirt"
+
+];
+
 const Recruited = () => {
-  const [searchParams] = useSearchParams();
-  const letssee = searchParams.get('letssee');
-  const [loadingStage, setLoadingStage] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [showContent, setShowContent] = useState(false);
   const [currentText, setCurrentText] = useState('');
   const [isExpanding, setIsExpanding] = useState(false);
   const [showFinalContent, setShowFinalContent] = useState(false);
@@ -16,25 +30,6 @@ const Recruited = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [showButton, setShowButton] = useState(false);
   const [textKey, setTextKey] = useState(0);
-
-  const loadingTexts = [
-    "Running Verifications...",
-    'Evaluating Skills...',
-    'Assessing Potential...',
-    'Measuring Vibes...',
-    "Finalizing Decision...",
-    "Let's see if you made it."
-  ];
-
-  const interactiveMessages = [
-    "We've seen your potential",
-    "It's time to prove it.",
-    "We call ourselves a family",
-    "And now...",
-    "You're a part of it.",
-    "It's time to see yourself in an EDCIC T-shirt"
-
-  ];
 
   useEffect(() => {
     // Loading sequence - 15 seconds total

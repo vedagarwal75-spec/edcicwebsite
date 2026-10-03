@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/SeedStories.css";
+import { SEED_STORIES } from "../config/site";
 import SeedStoriesBg from "../assets/seed_stories_image.jpg"; // Correct background image import
 import SeedStories1 from "../assets/ss4.jpg";
 import SeedStories2 from "../assets/ss1.jpg";
@@ -20,13 +21,13 @@ const SeedStories = () => {
       <div className="seedStories__videoSection">
         <h1 className="seedStories__heading">Watch Our Latest Video Here!</h1>
         <a
-          href="https://www.youtube.com/watch?v=jdyypQDmhmY"
+          href={`https://www.youtube.com/watch?v=${SEED_STORIES.videoId}`}
           target="_blank"
           rel="noopener noreferrer"
           className="seedStories__videoLink"
         >
           <img
-            src="https://img.youtube.com/vi/jdyypQDmhmY/0.jpg"
+            src={`https://img.youtube.com/vi/${SEED_STORIES.videoId}/0.jpg`}
             alt="YouTube Video Thumbnail"
             className="seedStories__videoThumbnail"
           />
@@ -34,7 +35,7 @@ const SeedStories = () => {
         <button
           className="seedStories__subscribeButton"
           onClick={() =>
-            window.open("https://www.youtube.com/@EDCICSXC", "_blank")
+            window.open(SEED_STORIES.channelUrl, "_blank", "noopener,noreferrer")
           }
         >
           Subscribe to EDCIC Channel
@@ -47,7 +48,7 @@ const SeedStories = () => {
         <div className="seedStories__story">
           <img
             src={SeedStories1}
-            alt="seed stories image"
+            alt="Seed Stories"
             className="seedStories__img"
           />
           <p className="seedStories__description">
@@ -65,7 +66,7 @@ const SeedStories = () => {
           </p>
           <img
             src={SeedStories2}
-            alt="seed stories image"
+            alt="Seed Stories"
             className="seedStories__img"
           />
         </div>
@@ -73,7 +74,7 @@ const SeedStories = () => {
         <div className="seedStories__story">
           <img
             src={SeedStories3}
-            alt="seed stories image"
+            alt="Seed Stories"
             className="seedStories__img"
           />
           <p className="seedStories__description">

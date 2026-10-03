@@ -9,6 +9,7 @@ const EDFSection = styled.section`
   align-items: center;
   text-align: center;
   height: 100vh;
+  height: 100dvh;
   padding: 40px 20px;
   color: #fff;
   background: linear-gradient(to bottom, #00004c, #101070);
@@ -48,6 +49,16 @@ const ParallaxSection = styled.div`
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
+    overflow-wrap: anywhere;
+
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+  }
+
+  /* fixed backgrounds are broken/janky on phones */
+  @media (hover: none) and (pointer: coarse) {
+    background-attachment: scroll;
   }
 `;
 

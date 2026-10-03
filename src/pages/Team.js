@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/team.css";
 import { Phone, Linkedin, Mail } from "lucide-react";
-import { teamMembers } from "../team/members";
+import { teamMembers, TEAM_PAGE } from "../team/members";
 
 // Photos are matched to members by name: "Ribhav Parasramka" -> photos/ribhav-parasramka.(png|jpg|jpeg|webp)
 const photoContext = require.context("../team/photos", false, /\.(png|jpe?g|webp)$/i);
@@ -20,7 +20,7 @@ const getImage = (member) => photos[slugify(member.name)] || placeholder;
 const Team = () => {
   return (
     <div className="team">
-      <h1 className="team__header">Meet Our Team</h1>
+      <h1 className="team__header">{TEAM_PAGE.title}</h1>
 
       <div className="team__members">
         {teamMembers.map((member) => (

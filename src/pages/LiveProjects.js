@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import img1 from "../assets/lp1.jpg";
-import img2 from "../assets/lp2.jpg";
-import img3 from "../assets/lp3.jpg";
-import img4 from "../assets/lp4.jpg";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-import img5 from "../assets/lp5.jpg";
+import { LIVE_PROJECTS } from "../content/initiatives";
 const LiveProjectsSection = styled.section`
   background: linear-gradient(to bottom, #00004c, #101070);
   color: #fff;
@@ -92,54 +88,36 @@ const LiveProjectsSection = styled.section`
 const LiveProjects = () => {
   return (
     <LiveProjectsSection>
-      <h1>Live Projects</h1>
-      <p>
-        Live projects are educational assignments that allow students to work on
-        real-world projects with external clients. They are a way for students
-        to apply theoretical knowledge to practical situations.
-      </p>
+      <h1>{LIVE_PROJECTS.title}</h1>
+      <p>{LIVE_PROJECTS.text}</p>
 
       <div className="benefits">
-        <h2>Benefits of Live Projects for Startups</h2>
+        <h2>{LIVE_PROJECTS.benefitsTitle}</h2>
         <div className="benefits-grid">
-          <div className="benefit-card">
-            <img src={img1} alt="Valuable Guidance" />
-            <h3>Valuable Guidance</h3>
-          </div>
-          <div className="benefit-card">
-            <img src={img2} alt="Fresh Talent" />
-            <h3>Fresh Talent</h3>
-          </div>
-          <div className="benefit-card">
-            <img src={img3} alt="Increased Productivity" />
-            <h3>Increased Productivity</h3>
-          </div>
-          <div className="benefit-card">
-            <img src={img4} alt="Brand Awareness" />
-            <h3>Brand Awareness</h3>
-          </div>
-          <div className="benefit-card">
-            <img src={img5} alt="Talent Scouting" />
-            <h3>Talent Scouting</h3>
-          </div>
+          {LIVE_PROJECTS.benefits.map((benefit) => (
+            <div key={benefit.title} className="benefit-card">
+              <img src={benefit.image} alt={benefit.title} />
+              <h3>{benefit.title}</h3>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="collaboration-section">
-        Wanna collaborate with EDCIC on a Live Project?
+        {LIVE_PROJECTS.collaborationText}
       </div>
       <Button
         component={Link}
-        to="/contact"
+        to={LIVE_PROJECTS.contactButton.url}
         sx={{
           textTransform: "none",
           fontSize: "14px",
-          fontWeight: "bold", // Bold font for desktop links
+          fontWeight: "bold",
           color: "inherit",
         }}
         className="contact-btn"
       >
-        Contact Us
+        {LIVE_PROJECTS.contactButton.text}
       </Button>
     </LiveProjectsSection>
   );

@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/Entreprise.css";
 import { REGISTRATION_LINKS } from "../config/site";
-import entreprise_logo from "../assets/entreprise_logo.png";
+import { ENTREPRISE } from "../content/events";
 
 const Entreprise = () => {
-  const redirect_to_form = () => {
+  const redirectToForm = () => {
     window.open(REGISTRATION_LINKS.entreprise, "_blank", "noopener,noreferrer");
   };
   return (
@@ -13,72 +13,35 @@ const Entreprise = () => {
       <section className="entreprise__banner">
         <div className="entreprise__bannerContent">
           <div className="entreprise__text">
-            <h1>Entreprise</h1>
-            <p>A one of a kind corporate simulation event.</p>
+            <h1>{ENTREPRISE.title}</h1>
+            <p>{ENTREPRISE.tagline}</p>
             <button
               className="entreprise__registerButton"
-              onClick={redirect_to_form}
+              onClick={redirectToForm}
             >
-              Register Now
+              {ENTREPRISE.registerButton}
             </button>
           </div>
           <img
             className="entreprise__bannerLogo"
-            src={entreprise_logo}
-            alt="Entreprise '24 Logo"
+            src={ENTREPRISE.logo}
+            alt={ENTREPRISE.bannerLogoAlt}
           />
         </div>
       </section>
 
       {/* About Section */}
       <section className="entreprise__about">
-        <h2>What is Entreprise?</h2>
+        <h2>{ENTREPRISE.aboutTitle}</h2>
         <div className="entreprise__aboutContent">
-          <p className="entreprise__textContentPara">
-            Entreprise is a one-of-a-kind 2-day corporate simulation event
-            organized especially for the first years of our college to showcase
-            their competency while contending against those who are driven to
-            reach the pinnacle. It aims to test the business acumen of the
-            participants, challenge their management skills, and help them
-            imbibe corporate insights that pave their future with greater
-            victories to conquer. Serving as a platform to exhibit their
-            potential and challenge the conventional, Entreprise tests their
-            stride in the various realms of management.
-          </p>
+          <p className="entreprise__textContentPara">{ENTREPRISE.aboutText}</p>
           <img
             className="entreprise__eventImage"
-            src={entreprise_logo}
-            alt="Entreprise Event"
+            src={ENTREPRISE.logo}
+            alt={ENTREPRISE.aboutImageAlt}
           />
         </div>
       </section>
-
-      {/* Partners Section */}
-      {/* <section className="entreprise__partners">
-        <h2>Our Partners</h2>
-        <div className="entreprise__partnersGrid">
-          <div className="entreprise__partner">
-            <img src={faceLogo} alt="Magazine Partner" />
-            <p>Magazine Partner</p>
-          </div>
-          <div className="entreprise__partner">
-            <img src={educationTreeLogo} alt="Skill Partner" />
-            <p>Skill Partner</p>
-          </div>
-          <div className="entreprise__partner">
-            <img src={edugraphLogo} alt="Outreach Partner" />
-            <p>Outreach Partner</p>
-          </div>
-          <div className="entreprise__partner">
-            <img src={friendsFmLogo} alt="Radio Partner" />
-            <p>Radio Partner</p>
-          </div>
-          <div className="entreprise__partner">
-            <img src={teachnookLogo} alt="Teaching Partner" />
-            <p>Teaching Partner</p>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 };

@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import incubationImage from "../assets/incubation_centre.jpg"; // Replace with the actual path
-import liveProjectsImage from "../assets/live_projects.jpg"; // Replace with the actual path
-import startupVoiceImage from "../assets/seed_stories.jpg"; // Replace with the actual path
-import edfImage from "../assets/edf.jpg"; // Replace with the actual path
-import envisageImage from "../assets/envisage.jpg"; // Replace with the actual path
-import bizwalk from "../assets/bizwalk.jpg"; // Replace with the actual path
+import { INITIATIVES_SECTION } from "../content/home";
 
 const InitiativesContainer = styled.div`
   text-align: center;
@@ -83,34 +78,13 @@ const InitiativesContainer = styled.div`
 `;
 
 const Initiatives = () => {
-  const initiatives = [
-    {
-      link: "/initiatives/incubation",
-      image: incubationImage,
-      title: "Incubation Centre",
-    },
-    {
-      link: "/initiatives/live-projects",
-      image: liveProjectsImage,
-      title: "Live Projects",
-    },
-    { link: "/seed-stories", image: startupVoiceImage, title: "Seed Stories" },
-    {
-      link: "/initiatives/edf",
-      image: edfImage,
-      title: "Entrepreneurship Development Fund",
-    },
-    { link: "/initiatives/envisage", image: envisageImage, title: "Envisage" },
-    { link: "/initiatives/bizwalk", image: bizwalk, title: "Bizwalk" },
-  ];
-
   return (
     <InitiativesContainer>
-      <h2>Our Initiatives</h2>
+      <h2>{INITIATIVES_SECTION.title}</h2>
       <div className="initiatives-grid">
-        {initiatives.map((initiative, index) => (
-          <div key={index} className="initiative-card">
-            <Link to={initiative.link}>
+        {INITIATIVES_SECTION.initiatives.map((initiative) => (
+          <div key={initiative.title} className="initiative-card">
+            <Link to={initiative.url}>
               <img
                 src={initiative.image}
                 alt={initiative.title}

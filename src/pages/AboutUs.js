@@ -1,12 +1,22 @@
 import React from "react";
 import "../styles/aboutUs.css";
 import { Container, Typography } from "@mui/material";
-import { motion } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { ABOUT_US } from "../content/about";
+
+const highlightStyle = {
+  contentStyle: {
+    background: "white",
+    color: "#010250",
+    border: "none",
+    borderRadius: "12px",
+  },
+  contentArrowStyle: { borderRight: "7px solid white" },
+};
 
 const AboutUs = () => {
   return (
@@ -15,7 +25,7 @@ const AboutUs = () => {
         {/* Intro Section */}
         <div className="aboutUsLanding">
           <Typography variant="h2" align="center" gutterBottom>
-            About Us
+            {ABOUT_US.title}
           </Typography>
         </div>
         <div className="aboutUsTimeline">
@@ -25,312 +35,36 @@ const AboutUs = () => {
             gutterBottom
             sx={{ fontSize: "3.2rem", margin: "20px", color: "white" }}
           >
-            A Brief History Of Events
+            {ABOUT_US.timelineTitle}
           </Typography>
 
           {/* Timeline Section */}
           <VerticalTimeline>
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              contentStyle={{
-                background: "white",
-                color: "#010250",
-                border: "none",
-                borderRadius: "12px",
-              }}
-              contentArrowStyle={{ borderRight: "7px solid white" }}
-              date="2015"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
+            {ABOUT_US.timeline.map((item) => (
+              <VerticalTimelineElement
+                key={item.title}
+                className="vertical-timeline-element--work"
+                date={item.date}
+                iconStyle={{ background: "white", color: "#010250" }}
+                {...(item.highlight ? highlightStyle : {})}
               >
-                Foundation of EDC
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2015
-              </Typography>
-              <Typography>
-                The Entrepreneurship Development Cell (EDC) was established to
-                foster innovation, entrepreneurship, and startup culture among
-                students at St. Xavier's College (Autonomous), Kolkata.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2017"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Biztatva Goes National
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2017
-              </Typography>
-              <Typography>
-                Biztatva, the first EDC event to expand its reach across India,
-                marked a significant milestone, showcasing the growing impact of
-                entrepreneurship at EDC.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2019"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Entrepreneurship Awareness Camp (EAC)
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2019
-              </Typography>
-              <Typography>
-                The first Entrepreneurship Awareness Camp (EAC) was organized to
-                educate students about entrepreneurship and connect startups
-                with investors and mentors.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2019"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Initium: Collaboration with Placement Cell
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2019
-              </Typography>
-              <Typography>
-                In collaboration with the Placement Cell, EDC launched Initium –
-                The Internship Expo, connecting students with top companies and
-                fostering career development.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2020"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Biztatva to Entreprise
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2020
-              </Typography>
-              <Typography>
-                Biztatva was restructured into Entreprise, a national-level
-                entrepreneurial simulation that tests participants' business
-                acumen through rigorous rounds.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2022"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                IIC Certification Awarded
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2021
-              </Typography>
-              <Typography>
-                The Institution’s Innovation Council (IIC) certification
-                recognized EDC’s commitment to fostering an entrepreneurial
-                ecosystem within the college.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2022"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Teafit at Shark Tank India
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2022
-              </Typography>
-              <Typography>
-                Teafit, a startup hosted at EAC, secured ₹50 lakh for 8% equity
-                after impressing the Sharks on Shark Tank India.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2022"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Rhizospheri-X Incubation
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2022
-              </Typography>
-              <Typography>
-                EDC incubated its first startup, Rhizospheri-X, which develops
-                eco-friendly biofertilizers and biopesticides. The startup
-                continues to receive mentorship and support from EDC.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2023"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                First Patent Filing
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2023
-              </Typography>
-              <Typography>
-                EDC marked a significant milestone by facilitating its first
-                patent filing, promoting innovation-driven entrepreneurship.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2023"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Launch of Envisage
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2023
-              </Typography>
-              <Typography>
-                EDC launched "Envisage," its official newsletter, offering
-                valuable business insights to inspire and inform future leaders.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2023"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Bizwalk Initiative
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2023
-              </Typography>
-              <Typography>
-                EDC launched Bizwalk, providing students with hands-on exposure
-                to established startups through guided visits, starting with a
-                visit to the Coca-Cola factory.
-              </Typography>
-            </VerticalTimelineElement>
-
-            <VerticalTimelineElement
-              className="vertical-timeline-element--work"
-              date="2024"
-              iconStyle={{ background: "white", color: "#010250" }}
-            >
-              <Typography
-                variant="h5"
-                className="vertical-timeline-element-title"
-              >
-                Seed Stories and Live Projects Initiative
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                className="vertical-timeline-element-subtitle"
-              >
-                2024
-              </Typography>
-              <Typography>
-                EDCIC started two new initiatives, Seed Stories and Live
-                Projects. Seed stories is a podcast sharing the unfiltered
-                journeys of startup founders. Live Projects allows members to
-                gain hands-on experience by working for startups.
-              </Typography>
-            </VerticalTimelineElement>
+                <Typography
+                  variant="h5"
+                  className="vertical-timeline-element-title"
+                >
+                  {item.title}
+                </Typography>
+                <Typography
+                  variant="subtitle1"
+                  className="vertical-timeline-element-subtitle"
+                >
+                  {item.subtitle || item.date}
+                </Typography>
+                <Typography>{item.text}</Typography>
+              </VerticalTimelineElement>
+            ))}
           </VerticalTimeline>
         </div>
-
-        {/* Team Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        ></motion.div>
       </Container>
     </div>
   );

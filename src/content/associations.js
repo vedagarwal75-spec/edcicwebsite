@@ -40,3 +40,5 @@ export const associations = associationList.map(({ name, logo }) => ({
   name,
   logo: logos(`./${logo}`),
 }));
+
+export const ASSOCIATIONS_TITLE = "OUR ASSOCIATIONS";

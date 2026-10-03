@@ -2,12 +2,12 @@
 import React from "react";
 import "../styles/OurAssociations.css";
 
-import { associations } from "../content/associations";
+import { associations, ASSOCIATIONS_TITLE } from "../content/associations";
 
 const Associations = () => {
   return (
     <section className="associations">
-      <h2 className="associations__title">OUR ASSOCIATIONS</h2>
+      <h2 className="associations__title">{ASSOCIATIONS_TITLE}</h2>
       <div className="associations__grid">
         {associations.map((partner, index) => (
           <div key={index} className="associations__card">

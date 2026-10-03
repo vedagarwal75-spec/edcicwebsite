@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import heroImage from "../assets/edcic_team.jpeg";
+import { HERO } from "../content/home";
 
 const HeroSection = styled.section`
   display: flex;
@@ -24,7 +24,7 @@ const HeroSection = styled.section`
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(0, 0, 128, 0.6), rgba(0, 0, 128, 0.6)),
-      url(${heroImage}) no-repeat center center/cover;
+      url(${HERO.image}) no-repeat center center/cover;
     z-index: -1;
   }
 
@@ -198,26 +198,18 @@ const HeroSection = styled.section`
 const HomeHeroSection = () => {
   return (
     <HeroSection>
-      <h1>Entrepreneurship Development Cell and Incubation Centre</h1>
-      <p>
-        The Entrepreneurship Development Cell and Incubation Centre of St.
-        Xavier's College (Autonomous), Kolkata seeks to transform how
-        entrepreneurship is perceived in society.
-      </p>
+      <h1>{HERO.title}</h1>
+      <p>{HERO.text}</p>
       <div className="cta-links">
-        <a href="/eac">EAC</a>
-        <a href="/live-projects">Live Projects</a>
-        <a href="/start-up-voice">Seed Stories</a>
-        <a href="/edf">EDF</a>
-        <a href="/incubation-centre">Incubation Centre</a>
+        {HERO.buttons.map((button) => (
+          <a key={button.url} href={button.url}>
+            {button.text}
+          </a>
+        ))}
       </div>
-      <a href="/about">
-        <button className="know-more-btn">Know More</button>
+      <a href={HERO.knowMore.url}>
+        <button className="know-more-btn">{HERO.knowMore.text}</button>
       </a>
-      {/* Cloud Overlay */}
-      {/* <div className="cloud-overlay">
-        <img src={cloudImage} alt="Cloud" className="cloud" />
-      </div> */}
     </HeroSection>
   );
 };

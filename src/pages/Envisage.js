@@ -2,42 +2,19 @@ import React from "react";
 import "../styles/Envisage.css";
 import { Download } from "@mui/icons-material";
 import { ENVISAGE } from "../config/documents";
-import team1 from "../assets/boardImages/img2.png";
-import team2 from "../assets/boardImages/img3.png";
-import team3 from "../assets/boardImages/img4.png";
-import team5 from "../assets/boardImages/img1.png";
-import img13 from "../assets/boardImages/img13.png";
-import img14 from "../assets/boardImages/img14.png";
-import akm from "../assets/boardImages/akm.png";
-
-const editorialTeam = [
-  { name: "Dr. Arup Kumar Mitra", role: "Deputy President", img: akm },
-  { name: "Ansh Arya", role: "Director", img: team5 },
-  { name: "Aarav Mittal", role: "Joint Secretary", img: team1 },
-  { name: "Rishab Dugar", role: "Joint Secretary", img: team3 },
-  { name: "Vedant Saboo", role: "Joint Secretary", img: team2 },
-  { name: "Harshita Mundra", role: "Editorial Head", img: img14 },
-  { name: "Pranit Parasrampuria", role: "Editorial Head", img: img13 },
-];
+import { ENVISAGE_PAGE } from "../content/initiatives";
 
 const Envisage = () => {
   return (
     <div className="envisage__container">
-      <h1 className="envisage__title">ENVISAGE : OUR ANNUAL NEWSLETTER</h1>
-      <p className="envisage__description">
-        Envisage, the annual newsletter of the Entrepreneurship Development Cell
-        & Incubation Centre (EDCIC) at St. Xavier’s College (Autonomous),
-        Kolkata, is a curated window into the dynamic world of startups,
-        innovation, and business strategy. Designed to inspire and inform, it
-        captures the pulse of the entrepreneurial landscape through expert
-        insights, industry trends, and real-world success stories.
-      </p>
+      <h1 className="envisage__title">{ENVISAGE_PAGE.title}</h1>
+      <p className="envisage__description">{ENVISAGE_PAGE.text}</p>
 
       {/* PDF Preview & Download Section */}
       <div className="envisage__download-section">
         <img
           src={ENVISAGE.preview}
-          alt="Envisage Newsletter Preview"
+          alt={ENVISAGE_PAGE.previewAlt}
           className="envisage__pdf-preview"
         />
         <a
@@ -46,17 +23,17 @@ const Envisage = () => {
           className="envisage__download-btn"
         >
           <Download className="envisage__download-icon" />
-          Download PDF
+          {ENVISAGE_PAGE.downloadButton}
         </a>
       </div>
 
       {/* Editorial Team Section */}
-      <h2 className="envisage__team-title">EDITORIAL TEAM 2024-25</h2>
+      <h2 className="envisage__team-title">{ENVISAGE_PAGE.teamTitle}</h2>
       <div className="envisage__team-grid">
-        {editorialTeam.map((member, index) => (
-          <div key={index} className="envisage__team-card">
+        {ENVISAGE_PAGE.team.map((member) => (
+          <div key={member.name} className="envisage__team-card">
             <img
-              src={member.img}
+              src={member.image}
               alt={member.name}
               className="envisage__team-img"
             />

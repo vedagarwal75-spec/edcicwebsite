@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import edciclogo from "../assets/edcic.png";
 import { FOOTER_LINKS } from "../config/navigation";
 import { EMAILS, SITE, SOCIAL_LINKS } from "../config/site";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -17,10 +16,10 @@ function Footer() {
     <div className="footer">
       <div className="footerUp">
         <div className="footerImg">
-          <img src={edciclogo} alt="" />
+          <img src={SITE.footerLogo} alt="" />
         </div>
         <div className="footerLinks">
-          <div className="footerLinksText">Site Map</div>
+          <div className="footerLinksText">{SITE.footerSiteMapTitle}</div>
           <div className="footerLinks_link">
             <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
               {FOOTER_LINKS.map((link, index) => (

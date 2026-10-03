@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import logo from "../assets/logo.jpeg";
+import { SITE } from "../config/site";
 import { NAVBAR_LINKS } from "../config/navigation";
 import "../styles/navbar.css";
 
@@ -82,7 +82,7 @@ const Navbar = () => {
           }}
         >
           <img
-            src={logo}
+            src={SITE.logo}
             alt="Your Logo"
             style={{
               height: "50px", // Adjust height as needed

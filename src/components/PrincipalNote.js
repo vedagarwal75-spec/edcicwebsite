@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import principalImage from "../assets/principal.jpeg"; // Replace with the actual path to the principal's image
+import { PRINCIPAL_NOTE } from "../content/home";
 
 const NoteContainer = styled.div`
   background-color: #001d4a; /* Dark blue background */
@@ -90,26 +90,16 @@ const PrincipalNote = () => {
   return (
     <div className="principalNote">
       <NoteContainer>
-        <div className="note-header">TESTIMONIAL</div>
+        <div className="note-header">{PRINCIPAL_NOTE.label}</div>
         <div className="note-content">
           <div className="image-container">
-            <img src={principalImage} alt="Reverend Father Dominic Savio SJ" />
+            <img src={PRINCIPAL_NOTE.image} alt={PRINCIPAL_NOTE.imageAlt} />
           </div>
           <div className="text-content">
-            <h3>REVEREND FATHER DOMINIC SAVIO SJ</h3>
+            <h3>{PRINCIPAL_NOTE.name}</h3>
             <div>
               <span className="quote-marks">"</span>
-              <p>
-                The power to think differently and ahead of the times for the
-                betterment of mankind is what sets entrepreneurs apart. India’s
-                young generation today has that power. History has witnessed
-                that countries which have encouraged entrepreneurs have grown at
-                a faster pace. Entrepreneurs create opportunities, create jobs,
-                create value and create wonders out of nothing. E-Cell provides
-                exposure to entrepreneurship at an early age, helping many
-                students realize their potential as individuals and world
-                citizens.
-              </p>
+              <p>{PRINCIPAL_NOTE.quote}</p>
               <span className="quote-marks">"</span>
             </div>
           </div>

@@ -1,8 +1,19 @@
 // Site-wide text, contact details and external links.
 // Change a value here and it updates everywhere it is used.
 
+import logo from "../assets/logo.jpeg";
+import footerLogo from "../assets/edcic.png";
+import contactBackground from "../assets/contact_background.jpeg";
+
 export const SITE = {
   copyright: "© 2025 edcicsxc. All Rights Reserved.",
+  // Round logo in the navbar / 404 page, logo in the footer, background of the Contact page.
+  // To change them, replace the files in src/assets/ (same name) or point the imports above elsewhere.
+  logo,
+  footerLogo,
+  contactBackground,
+  footerSiteMapTitle: "Site Map",
+  contactHeading: "Contact Us Now!",
 };
 
 export const EMAILS = {

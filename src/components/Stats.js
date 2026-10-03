@@ -1,21 +1,16 @@
 import React from "react";
 import "../styles/stats.css";
+import { INITIUM } from "../content/events";
 
 const Stats = () => {
   return (
     <div className="stats__container">
-      <div className="stats__item">
-        <h2 className="stats__number">1000 +</h2>
-        <p className="stats__label">Registrations</p>
-      </div>
-      <div className="stats__item">
-        <h2 className="stats__number">80 +</h2>
-        <p className="stats__label">Internships</p>
-      </div>
-      <div className="stats__item">
-        <h2 className="stats__number">65 +</h2>
-        <p className="stats__label">Companies</p>
-      </div>
+      {INITIUM.stats.map((stat) => (
+        <div key={stat.label} className="stats__item">
+          <h2 className="stats__number">{stat.number}</h2>
+          <p className="stats__label">{stat.label}</p>
+        </div>
+      ))}
     </div>
   );
 };

@@ -142,3 +142,7 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/vidishajagnani",
   },
 ];
+
+export const TEAM_PAGE = {
+  title: "Meet Our Team",
+};

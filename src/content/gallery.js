@@ -8,3 +8,5 @@ export const galleryImages = context
   .keys()
   .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
   .map((key) => context(key));
+
+export const GALLERY_TITLE = "Gallery";

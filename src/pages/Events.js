@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom"; // Import Link from React Router DOM
-import prismLogo from "../assets/eac/prism.jpg";
-import elevatorLogo from "../assets/elevator.jpg";
-import enterpriseLogo from "../assets/entreprise.jpg";
-import workshopLogo from "../assets/360.jpg";
-import initiumLogo from "../assets/initium.jpeg";
-import eacLogo from "../assets/eac.jpg";
+import { Link } from "react-router-dom";
+import { EVENTS_SECTION } from "../content/home";
 
 const EventsContainer = styled.div`
   text-align: center;
@@ -98,68 +93,18 @@ const Events = () => {
   };
   return (
     <EventsContainer>
-      <h2>Our Events</h2>
-      <p>
-        We firmly believe that entrepreneurship is the key to fostering
-        innovation in India and promoting the values surrounding
-        entrepreneurship will result in attainment of the full capacity of the
-        youths aptitude.
-      </p>
+      <h2>{EVENTS_SECTION.title}</h2>
+      <p>{EVENTS_SECTION.text}</p>
       <div className="events-grid" onClick={returnToTop}>
-        <Link to="/events/prism" className="event-card">
-          <div className="image-container">
-            <img src={prismLogo} alt="Prism '24 Logo" />
-          </div>
-          <h3>PRISM</h3>
-          <p>Ignite the Uncharted</p>
-        </Link>
-        <Link
-          to="/events/elevator"
-          className="event-card"
-          onClick={returnToTop}
-        >
-          <div className="image-container">
-            <img src={elevatorLogo} alt="Elevator Logo" />
-          </div>
-          <h3>Elevator</h3>
-          <p>The Idea Expo</p>
-        </Link>
-        <Link
-          to="/events/entreprise"
-          className="event-card"
-          onClick={returnToTop}
-        >
-          <div className="image-container">
-            <img src={enterpriseLogo} alt="Enterprise Logo" />
-          </div>
-          <h3>Entreprise</h3>
-          <p>Think Big, Think Global</p>
-        </Link>
-        <Link
-          to="/events/workshop"
-          className="event-card"
-          onClick={returnToTop}
-        >
-          <div className="image-container">
-            <img src={workshopLogo} alt="360 Workshop Logo" />
-          </div>
-          <h3>360° Workshop</h3>
-          <p>Learn and Grow</p>
-        </Link>
-        <Link to="/events/initium" className="event-card" onClick={returnToTop}>
-          <div className="image-container">
-            <img src={initiumLogo} alt="Initium Logo" />
-          </div>
-          <h3>Initium</h3>
-          <p>The Internship Expo</p>
-        </Link>
-        <Link to="/events/eac" className="event-card" onClick={returnToTop}>
-          <div className="image-container">
-            <img src={eacLogo} alt="EAC Logo" />
-          </div>
-          <h3>EAC</h3>
-          <p>Entrepreneurship Awareness Camp</p>
-        </Link>
+        {EVENTS_SECTION.events.map((event) => (
+          <Link key={event.url} to={event.url} className="event-card">
+            <div className="image-container">
+              <img src={event.image} alt={event.imageAlt} />
+            </div>
+            <h3>{event.name}</h3>
+            <p>{event.tagline}</p>
+          </Link>
+        ))}
       </div>
     </EventsContainer>
   );

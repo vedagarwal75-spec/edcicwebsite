@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import certificateImage from "../assets/certificate.png"; // Replace with the actual path to the certificate image
+import { CERTIFICATE } from "../content/home";
 
 const CertificateContainer = styled.div`
   background-color: #001d4a; /* Dark blue background */
@@ -37,19 +37,11 @@ const CertificateContainer = styled.div`
 const Certificate = () => {
   return (
     <CertificateContainer>
-      <h1 className="title">Institution’s Innovation Council</h1>
-      <p className="certificate__text">
-        The Institution’s Innovation Council (IIC) at St. Xavier’s College,
-        Kolkata, fosters a dynamic innovation ecosystem, encouraging students to
-        transform ideas into prototypes. It connects students with mentors,
-        industry experts, and research institutions, focusing on bridging
-        scientific research with commercial applications. The IIC aims to drive
-        sustainable development and promote holistic student growth through
-        mentorship, collaboration, and interdisciplinary learning.
-      </p>
+      <h1 className="title">{CERTIFICATE.title}</h1>
+      <p className="certificate__text">{CERTIFICATE.text}</p>
       <img
-        src={certificateImage}
-        alt="Certificate of Establishment"
+        src={CERTIFICATE.image}
+        alt={CERTIFICATE.imageAlt}
         className="certificate-image"
       />
     </CertificateContainer>

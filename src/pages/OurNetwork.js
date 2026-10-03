@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/ourNetwork2.css";
-import { networkMembers } from "../content/network";
+import { networkMembers, NETWORK_TITLE } from "../content/network";
 
 const OurNetwork = () => {
   return (
     <section className="ourNetwork">
-      <h2 className="ourNetwork__title">OUR NETWORK</h2>
+      <h2 className="ourNetwork__title">{NETWORK_TITLE}</h2>
       <div className="ourNetwork__grid">
         {networkMembers.map((member, index) => (
           <div key={member.name} className="ourNetwork__card">

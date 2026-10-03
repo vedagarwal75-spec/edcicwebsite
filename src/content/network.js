@@ -23,3 +23,5 @@ export const networkMembers = networkList.map(({ image, ...rest }) => ({
   ...rest,
   image: photos(`./${image}`),
 }));
+
+export const NETWORK_TITLE = "OUR NETWORK";

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import EDFImage from "../assets/EDF_image.jpg"; // Importing the background image
+import { EDF as EDF_CONTENT } from "../content/initiatives";
 
 const EDFSection = styled.section`
   display: flex;
@@ -19,7 +19,7 @@ const EDFSection = styled.section`
 const ParallaxSection = styled.div`
   width: 100%;
   height: 80vh;
-  background-image: url(${EDFImage});
+  background-image: url(${EDF_CONTENT.backgroundImage});
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,29 +125,17 @@ const EDF = () => {
     <ResponsiveWrapper>
       {/* Parallax Background Section */}
       <ParallaxSection className="parallax-section">
-        <h1>ENTREPRENEURSHIP DEVELOPMENT FUND</h1>
+        <h1>{EDF_CONTENT.title}</h1>
       </ParallaxSection>
 
       {/* Main Content Section */}
       <EDFSection>
         <ContentWrapper>
-          <p>
-            EDCIC’s vision to revolutionise innovation & entrepreneurship in the
-            country through its students took form as it started a
-            non-commercial initiative called the St. Xavier’s Entrepreneurship
-            Development Fund (EDF). This serves as a building block among young
-            Xaverians (both former & current) in their entrepreneurial journey,
-            connecting them with mentors, investors, & industry experts.
-          </p>
-          <p>
-            If a prototype is deemed unique and feasible, funding up to 50k can
-            be provided from EDF to support development and growth.
-          </p>
-          <div className="highlight-section">
-            Are you an alumni or student of St. Xavier’s College (Autonomous),
-            Kolkata running their own startup?
-          </div>
-          <button className="contact-btn">Contact us</button>
+          {EDF_CONTENT.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <div className="highlight-section">{EDF_CONTENT.highlight}</div>
+          <button className="contact-btn">{EDF_CONTENT.contactButton}</button>
         </ContentWrapper>
       </EDFSection>
     </ResponsiveWrapper>

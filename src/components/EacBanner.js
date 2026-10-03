@@ -1,19 +1,19 @@
 import React from "react";
 import "../styles/EacBanner.css";
-import eacBg from "../assets/eacBg.png"; // Ensure this image is placed correctly in assets
+import { EAC_BANNER } from "../content/eac";
 
 const EACBanner = () => {
   return (
     <div className="eacBanner">
       <img
-        src={eacBg}
-        alt="Entrepreneurship Awareness Camp"
+        src={EAC_BANNER.image}
+        alt={EAC_BANNER.imageAlt}
         className="eacBanner__image"
       />
       <div className="eacBanner__overlay">
-        <p className="eacBanner__subtitle">EDCIC'S Flagship Event</p>
-        <h1 className="eacBanner__title">ENTREPRENEURSHIP AWARENESS CAMP</h1>
-        <p className="eacBanner__location">St. Xavier’s College (Autonomous), Kolkata</p>
+        <p className="eacBanner__subtitle">{EAC_BANNER.subtitle}</p>
+        <h1 className="eacBanner__title">{EAC_BANNER.title}</h1>
+        <p className="eacBanner__location">{EAC_BANNER.location}</p>
       </div>
     </div>
   );

@@ -38,16 +38,16 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
+/* Photos are shown whole (never cropped): contained inside a soft rounded frame */
 .ourNetwork__image {
   display: block;
-  width: 78%;
-  max-width: 190px;
+  width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 50%;
+  object-fit: contain;
+  object-position: center bottom;
+  border-radius: 14px;
   background: linear-gradient(160deg, #eef2ff, #dbe4ff);
-  margin: 6px auto 16px;
+  margin: 0 auto 16px;
 }
 
 .ourNetwork__name {

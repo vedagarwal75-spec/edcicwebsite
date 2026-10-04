@@ -423,3 +423,14 @@
     height: 100px;
   }
 }
+/* Large blurred panels make scrolling laggy on phones; the blur is barely visible, so skip it on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .eac-description,
+  .eac-mentorship,
+  .eac-featured-speakers,
+  .eac-investor-pitch,
+  .eac-panel-discussion {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

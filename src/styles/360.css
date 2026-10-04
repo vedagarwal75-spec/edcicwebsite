@@ -76,34 +76,44 @@
   margin-bottom: 3rem;
 }
 
+/* Past workshops (src/content/events.js): 2 per row, equal-height cards, a last odd card is centred */
 .workshop360__pastContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .workshop360__pastItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid white;
-  padding: 2.5rem;
-  width: 45%;
-  gap: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.workshop360__pastItem:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 1rem);
 }
 
 .workshop360__pastText {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-align: left;
-  max-width: 60%;
+  flex: 1;
+  min-width: 0;
 }
 
 .workshop360__pastImage {
-  width: 250px;
-  height: 250px;
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -130,21 +140,26 @@
     font-size: 1.2rem;
   }
 
-  .workshop360__pastItem {
-    flex-direction: column;
-    text-align: center;
-    width: 80%;
-    padding: 2rem;
+  .workshop360__past {
+    padding: 3rem 2rem;
+  }
+
+  .workshop360__pastContainer {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+  }
+
+  .workshop360__pastItem:last-child:nth-child(odd) {
+    width: auto;
   }
 
   .workshop360__pastText {
-    font-size: 1.5rem;
-    max-width: 100%;
+    font-size: 1.4rem;
   }
 
   .workshop360__pastImage {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 }
 
@@ -175,12 +190,19 @@
     max-width: 90%;
   }
 
-  .workshop360__pastContainer {
-    flex-direction: column;
+  .workshop360__past {
+    padding: 2.5rem 1rem;
   }
 
   .workshop360__pastItem {
-    width: 100%;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .workshop360__pastText {
+    text-align: center;
+    font-size: 1.2rem;
   }
 
   .workshop360__pastImage {
